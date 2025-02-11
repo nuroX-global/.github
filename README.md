@@ -1,9 +1,13 @@
 # Welcome to nuroX
 
 <div align="center">
-  <img src="logo.svg" alt="nuroX Logo" width="200"/>
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="logo_dark.svg" width="200">
+    <img src="logo.svg" alt="nuroX Logo" width="200">
+  </picture>
   <h3>Data-Driven Innovation for a Conscious Future</h3>
 </div>
+
 
 ## About nuroX
 
@@ -81,5 +85,8 @@ Special thanks to all our [contributors](https://github.com/nuroX-global/contrib
 <div align="center">
   <sub>Built with excellence & ingenuity by the nuroX Team</sub>
   <br><br>
-  <img src="blk_x.png" alt="nuroX Logo Mark" width="50"/>
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="white_x.png" width="50">
+    <img src="blk_x.png" alt="nuroX Logo Mark" width="50">
+  </picture>
 </div>
