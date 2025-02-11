@@ -2,20 +2,32 @@
 
 <div align="center">
   <img src="logo.svg" alt="nuroX Logo" width="200"/>
-  <h3>Shaping a future of data and business conciousness</h3>
+  <h3>Data-Driven Innovation for a Conscious Future</h3>
 </div>
 
 ## About nuroX
 
-nuroX is pioneering the development of advanced AI systems and intelligent automation solutions. Our mission is to empower organizations with cutting-edge AI technology that drives innovation and operational excellence.
+nuroX is a visionary company delivering transformative technology, informatics, and consultancy offerings. We integrate edge software design, data governance, and robust cybersecurity, excel in regulatory and governance frameworks design, and leverage enterprise architecture and configuration management as key enablers for seamless, future-proof ecosystems in aviation, energy, defense, and enterprise verticals.
 
-## 🌟 Key Features
+Founded by three industry experts with a passion for management science, mathematics, systems engineering, and AI, nuroX aims to revolutionize business and engineering solutions through cutting-edge research in mathematics, informatics, and AI.
 
-- **Advanced AI Models**: State-of-the-art machine learning and deep learning solutions
-- **Intelligent Automation**: Smart process automation and workflow optimization
-- **Enterprise Integration**: Seamless integration with existing enterprise systems
-- **Scalable Architecture**: Built for performance and scalability
-- **Security-First Design**: Enterprise-grade security and compliance
+## 🌟 Our Values
+
+### Innovation & Creativity
+- Pioneering research initiatives
+- Fostering new ideas and approaches
+- Pushing technological boundaries
+
+### Technological Excellence
+- Advanced Cloud Solutions
+- Cutting-edge AI Implementation
+- Quantum Computing Research
+- State-of-the-art R&D
+
+### Circular Economy
+- Alignment with Sustainable Development Goals
+- Environment-conscious Solutions
+- Long-term Sustainability Focus
 
 ## 🚀 Getting Started
 
@@ -69,5 +81,5 @@ Special thanks to all our [contributors](https://github.com/nuroX-global/contrib
 <div align="center">
   <sub>Built with excellence & ingenuity by the nuroX Team</sub>
   <br><br>
-  <img src="blkx_x.png" alt="nuroX Logo Mark" width="50"/>
+  <img src="blk_x.png" alt="nuroX Logo Mark" width="50"/>
 </div>
