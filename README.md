@@ -2,7 +2,7 @@
 
 <div align="center">
   <img src="logo.svg" alt="nuroX Logo" width="200"/>
-  <h3>Building the Future of Intelligent Systems</h3>
+  <h3>Shaping a future of data and business conciousness</h3>
 </div>
 
 ## About nuroX
