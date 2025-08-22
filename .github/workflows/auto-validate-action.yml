@@ -1,0 +1,84 @@
+# Organization Default Auto-Validation Workflow
+# This workflow is automatically added to ALL new repositories in the nuroX organization
+# It intelligently detects GitHub Action repositories and validates them against nuroX standards
+
+name: Auto-Validate Action
+
+on:
+  push:
+    branches: [main, develop, master]
+    paths:
+      - 'action.yml'
+      - 'action.yaml'
+      - 'README.md'
+      - 'LICENSE'
+      - '.github/workflows/**'
+  pull_request:
+    branches: [main, develop, master]
+    paths:
+      - 'action.yml'
+      - 'action.yaml'
+      - 'README.md'
+      - 'LICENSE'
+      - '.github/workflows/**'
+
+jobs:
+  auto-validate:
+    name: nuroX Auto-Validation
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Detect and validate GitHub Action
+        id: validate
+        uses: nuroX-global/cicd-actions/nurox-github-action-validator@v0.1.0-dev
+        with:
+          # Auto-detection logic:
+          # - Only runs validation if repo name contains "action" AND action.yml exists
+          # - Skips validation for non-action repositories (no interference)
+          # - Enforces nuroX standards for detected action repositories
+          strict-mode: true
+          nurox-standards: true
+          check-readme: true
+          check-license: true
+          check-security: true
+          security-minimum: 70
+
+      - name: Report validation results
+        if: always()
+        run: |
+          echo "## 🎯 nuroX Organization Auto-Validation" >> $GITHUB_STEP_SUMMARY
+          echo "=========================================" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "**Repository**: ${{ github.repository }}" >> $GITHUB_STEP_SUMMARY
+          echo "**Triggered by**: Organization default workflow" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          
+          # Show results if validation ran
+          if [ "${{ steps.validate.outputs.validation-result }}" != "" ]; then
+            echo "**Validation Result**: ${{ steps.validate.outputs.validation-result }}" >> $GITHUB_STEP_SUMMARY
+            echo "**Action Type**: ${{ steps.validate.outputs.action-type }}" >> $GITHUB_STEP_SUMMARY  
+            echo "**Security Score**: ${{ steps.validate.outputs.security-score }}/100" >> $GITHUB_STEP_SUMMARY
+            echo "**Issues Found**: ${{ steps.validate.outputs.issues-count }}" >> $GITHUB_STEP_SUMMARY
+            echo "" >> $GITHUB_STEP_SUMMARY
+            
+            if [ "${{ steps.validate.outputs.validation-result }}" = "pass" ]; then
+              echo "🎉 **Validation passed!** This GitHub Action meets nuroX standards." >> $GITHUB_STEP_SUMMARY
+            else
+              echo "⚠️ **Validation failed.** Please review and address the issues to ensure compliance with nuroX standards." >> $GITHUB_STEP_SUMMARY
+            fi
+          else
+            echo "ℹ️ **Auto-validation skipped** - Repository not detected as a GitHub Action." >> $GITHUB_STEP_SUMMARY
+            echo "" >> $GITHUB_STEP_SUMMARY
+            echo "**Detection criteria**:" >> $GITHUB_STEP_SUMMARY
+            echo "- Repository name contains 'action'" >> $GITHUB_STEP_SUMMARY
+            echo "- Action file (action.yml or action.yaml) exists in repository root" >> $GITHUB_STEP_SUMMARY
+            echo "" >> $GITHUB_STEP_SUMMARY
+            echo "If this repository should be validated as a GitHub Action, ensure it meets the above criteria." >> $GITHUB_STEP_SUMMARY
+          fi
+          
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "---" >> $GITHUB_STEP_SUMMARY
+          echo "*Powered by [nuroX GitHub Action Validator](https://github.com/nuroX-global/cicd-actions/tree/main/nurox-github-action-validator)*" >> $GITHUB_STEP_SUMMARY

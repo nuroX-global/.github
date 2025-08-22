@@ -44,6 +44,18 @@ Visit our [official documentation](https://docs.nurox.ai) for comprehensive guid
 - [Developer Guides](https://docs.nurox.ai/guides)
 - [Examples & Tutorials](https://docs.nurox.ai/tutorials)
 
+## 🛠️ Organization Defaults
+
+This repository contains organization-wide defaults that are automatically applied to all new repositories in the nuroX organization:
+
+### 🎯 Auto-Validation Workflows
+- **Automatic GitHub Action validation** for repositories containing GitHub Actions
+- **Smart detection** - only validates repositories with "action" in name + action.yml file
+- **nuroX standards enforcement** - ensures compliance with organizational standards
+- **Zero configuration** - works automatically for developers
+
+[Learn more about organization defaults →](.github/README.md)
+
 ## 🤝 Contributing
 
 We welcome contributions from the community! Please read our [Contributing Guidelines](CONTRIBUTING.md) to get started.
