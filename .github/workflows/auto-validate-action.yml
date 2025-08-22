@@ -33,7 +33,7 @@ jobs:
 
       - name: Detect and validate GitHub Action
         id: validate
-        uses: nuroX-global/cicd-actions/nurox-github-action-validator@v0.1.0-dev
+        uses: nuroX-global/nurox-github-action-validator@v0.1.0-dev
         with:
           # Auto-detection logic:
           # - Only runs validation if repo name contains "action" AND action.yml exists
