@@ -64,7 +64,7 @@ jobs:
           echo "5. Commit your fixes and push to trigger re-validation"
           echo ""
           echo "### 📚 Resources:"
-          echo "- [nuroX Action Standards](https://wiki.nurox.ai/actions-standards.html)"
+          echo "- [nuroX Action Standards](https://wiki.nurox.ai/nurox-github-actions-standards.html)"
           echo "- [GitHub Action Best Practices](https://docs.github.com/en/actions/creating-actions/about-custom-actions)"
           echo "- [nuroX Validator Documentation](https://github.com/nuroX-global/cicd-actions/tree/main/nurox-github-action-validator)"
 
