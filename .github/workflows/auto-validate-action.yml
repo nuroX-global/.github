@@ -1,7 +1,4 @@
-# Organization Default Auto-Validation Workflow
-# This workflow is automatically added to ALL new repositories in the nuroX organization
-# It intelligently detects GitHub Action repositories and validates them against nuroX standards
-
+---
 name: Auto-Validate Action
 
 on:
@@ -33,7 +30,7 @@ jobs:
 
       - name: Detect and validate GitHub Action
         id: validate
-        uses: nuroX-global/nurox-github-action-validator@v0.1.0-dev
+        uses: nuroX-global/nurox-github-action-validator
         with:
           # Auto-detection logic:
           # - Only runs validation if repo name contains "action" AND action.yml exists
@@ -44,7 +41,44 @@ jobs:
           check-readme: true
           check-license: true
           check-security: true
-          security-minimum: 70
+          security-minimum: 80
+
+      - name: Handle validation failures
+        if: steps.validate.outputs.validation-result == 'fail'
+        run: |
+          echo "::error title=Action Validation Failed::This GitHub Action does not meet nuroX standards and cannot be merged until issues are resolved."
+          echo ""
+          echo "## ❌ Validation Failed - Action Required"
+          echo "**Issues Found**: ${{ steps.validate.outputs.issues-count }}"
+          echo "**Security Score**: ${{ steps.validate.outputs.security-score }}/100 (minimum required: 70)"
+          echo ""
+          echo "### 🔧 How to Fix:"
+          echo "1. Review the detailed validation report in the step summary above"
+          echo "2. Address all identified issues in your action.yml, README.md, and LICENSE files"
+          echo "3. Ensure your action meets nuroX standards:"
+          echo "   - Author field must be 'nuroX Global'"
+          echo "   - Action name should start with 'Setup', 'nuroX', or 'CICD'"
+          echo "   - Description must be at least 20 characters and mention 'nuroX'"
+          echo "   - Include proper branding section"
+          echo "4. Run validation locally: 'cd nurox-github-action-validator && bash test-validator.sh'"
+          echo "5. Commit your fixes and push to trigger re-validation"
+          echo ""
+          echo "### 📚 Resources:"
+          echo "- [nuroX Action Standards](https://wiki.nurox.ai/actions-standards.html)"
+          echo "- [GitHub Action Best Practices](https://docs.github.com/en/actions/creating-actions/about-custom-actions)"
+          echo "- [nuroX Validator Documentation](https://github.com/nuroX-global/cicd-actions/tree/main/nurox-github-action-validator)"
+
+      - name: Block PR on validation failure
+        if: github.event_name == 'pull_request' && steps.validate.outputs.validation-result == 'fail'
+        run: |
+          echo "::error::PR blocked due to action validation failures. Please fix the issues and try again."
+          exit 1
+
+      - name: Notify on validation success
+        if: steps.validate.outputs.validation-result == 'pass'
+        run: |
+          echo "::notice title=Action Validation Passed::✅ This GitHub Action meets all nuroX standards!"
+          echo "Security Score: ${{ steps.validate.outputs.security-score }}/100"
 
       - name: Report validation results
         if: always()
