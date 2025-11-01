@@ -5,50 +5,63 @@
     <source media="(prefers-color-scheme: dark)" srcset="logo_dark.svg" width="200">
     <img src="logo.svg" alt="nuroX Logo" width="200">
   </picture>
-  <h3>Data-Driven Innovation for a Conscious Future</h3>
+  <h3>Engineer Emergence. Open Results.</h3>
 </div>
-
 
 ## About nuroX
 
-nuroX is a visionary company delivering transformative technology, informatics, and consultancy offerings. We integrate edge software design, data governance, and robust cybersecurity, excel in regulatory and governance frameworks design, and leverage enterprise architecture and configuration management as key enablers for seamless, future-proof ecosystems in aviation, energy, defense, and enterprise verticals.
+nuroX builds closed-loop, zero-trust platforms that learn in production, turning telemetry into measurable lift and emitting compliance by design—linking research to real-world outcomes in mission-critical environments.
 
-Founded by three industry experts with a passion for management science, mathematics, systems engineering, and AI, nuroX aims to revolutionize business and engineering solutions through cutting-edge research in mathematics, informatics, and AI.
+We fuse informatics, management cybernetics, enterprise architecture, and zero-trust security to create self-improving platforms that sense, decide, act, and learn. Every action logs evidence, every loop improves outcomes—MTTR down, SLO up, risk reduced.
 
-## 🌟 Our Values
+## Vision
 
-### Innovation & Creativity
-- Pioneering research initiatives
-- Fostering new ideas and approaches
-- Pushing technological boundaries
+Unite informatics, cybernetics, and zero-trust engineering with quantified processes to create closed-loop deployable platforms that learn, heal, and win lift—making system resilience and compliance properties of the system and gamifying mission-critical work while pushing the state of the art.
 
-### Technological Excellence
-- Advanced Cloud Solutions
-- Cutting-edge AI Implementation
-- Quantum Computing Research
-- State-of-the-art R&D
+## Mission
 
-### Circular Economy
-- Alignment with Sustainable Development Goals
-- Environment-conscious Solutions
-- Long-term Sustainability Focus
+Engineer emergence: fuse informatics, management cybernetics, enterprise architecture, and zero-trust security to build self-improving, closed-loop platforms (sense → decide → act → learn) that gamify mission-critical systems, operationalize resilience, and turn telemetry into measurable business lift—while pushing the state of the art through security-led, applied research that moves from lab to production.
 
-## 🚀 Getting Started
+## Core Principles
+
+### Closed Loops, Open Results
+Platforms sense → decide → act → learn with audit trails; outcomes visible in KPIs (MTTR↓, SLO↑, cost/incident↓).
+
+### Zero-Trust, Operationalized
+Identity, least-privilege, signed artifacts, attested deployments. Compliance is emitted as by-product evidence.
+
+### Telemetry → Lift
+Data becomes actionable control signals; every loop ties back to a measurable business objective.
+
+### Mission-Critical by Design
+Built for rail, aviation, and defense-grade operations where failure is expensive.
+
+### Research to Production
+Security-led, applied research integrated into delivery; ideas don't stall in the lab.
+
+### Gamified Adoption
+Make the right behaviors the easy, rewarding path; adoption generates compounding value.
+
+## Getting Started
 
 Visit our [official documentation](https://docs.nurox.ai) for comprehensive guides, tutorials, and API references.
 
-## 📖 Documentation
+## Documentation
 
+### Public Documentation
 - [Product Documentation](https://docs.nurox.ai)
 - [API Reference](https://api.nurox.ai)
 - [Developer Guides](https://docs.nurox.ai/guides)
 - [Examples & Tutorials](https://docs.nurox.ai/tutorials)
 
-## 🛠️ Organization Defaults
+### Internal Resources
+- [nuroX Wiki](https://wiki.nurox.ai) - Internal developer documentation, architecture guides, and engineering standards (requires authentication)
+
+## Organization Defaults
 
 This repository contains organization-wide defaults that are automatically applied to all new repositories in the nuroX organization:
 
-### 🎯 Auto-Validation Workflows
+### Auto-Validation Workflows
 - **Automatic GitHub Action validation** for repositories containing GitHub Actions
 - **Smart detection** - only validates repositories with "action" in name + action.yml file
 - **nuroX standards enforcement** - ensures compliance with organizational standards
@@ -56,9 +69,9 @@ This repository contains organization-wide defaults that are automatically appli
 
 [Learn more about organization defaults →](.github/README.md)
 
-## 🤝 Contributing
+## Contributing
 
-We welcome contributions from the community! Please read our [Contributing Guidelines](CONTRIBUTING.md) to get started.
+We welcome contributions to our open specifications and tooling repositories. Please read our [Contributing Guidelines](CONTRIBUTING.md) to get started.
 
 ### Before You Start
 
@@ -66,26 +79,26 @@ We welcome contributions from the community! Please read our [Contributing Guide
 2. Check the [Governance Model](GOVERNANCE.md)
 3. Read the [Security Policy](SECURITY.md)
 
-## 💬 Community & Support
+## Community & Support
 
 - [Community Forums](https://community.nurox.ai)
 - [Support Documentation](SUPPORT.md)
 - [Stack Overflow](https://stackoverflow.com/questions/tagged/nurox)
 - [Discord Community](https://discord.gg/nurox)
 
-## 🔒 Security
+## Security
 
 Security is our top priority. If you discover any security-related issues, please follow our [Security Policy](SECURITY.md) for responsible disclosure.
 
-## 📄 License
+## License
 
-nuroX is proprietary software. See our [LICENSE](LICENSE.md) file for details.
+nuroX software is proprietary unless explicitly designated as open source. Individual repositories contain their own license files. Specifications and tooling may be released under open source licenses—refer to each repository's LICENSE file for details.
 
-## ✨ Recognition
+## Recognition
 
 Special thanks to all our [contributors](https://github.com/nuroX-global/contributors) who help make nuroX better every day.
 
-## 🌐 Connect With Us
+## Connect With Us
 
 - [Website](https://www.nurox.ai)
 - [Blog](https://blog.nurox.ai)
